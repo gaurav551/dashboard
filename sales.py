@@ -39,7 +39,22 @@ st.markdown("""
     }
     </style>
     """, unsafe_allow_html=True)
-
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    .st-emotion-cache-1bdcqw1 svg.stActionButton {
+        display: none;
+    }
+    .stAppDeployButton {
+     display: none;
+    }
+    .st-emotion-cache-1bdcqw1 button[kind="primaryFormSubmit"] {
+        display: none;
+    }
+    </style>
+    """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 # Load the data with proper date parsing
 @st.cache_data
 def load_data():
